@@ -1,0 +1,4 @@
+/dotnet/obj
+/dotnet/.vs
+/dotnet/bin
+/rust/.vscode

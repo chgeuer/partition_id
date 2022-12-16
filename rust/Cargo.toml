@@ -1,0 +1,8 @@
+[package]
+name = "partition_id"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dr. Christian Geuer-Pollmann <geuerp@apache.org>"]
+
+[dependencies]
+clap = { version = "4.0.29", features = ["derive"] }
