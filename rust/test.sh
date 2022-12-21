@@ -1,8 +1,7 @@
 #!/bin/bash
 
-target="x86_64-unknown-linux-musl"
-cargo build --release --target x86_64-unknown-linux-musl
-p="./target/${target}/release/partition_id"
+cargo build --release
+p="./target/release/partition_id"
 
 $p -c 32 -k "0032a60d-2e76-4aae-8ee0-13dd108c99a8"
 $p -c 32 -k "01325776-ebef-4df8-9f98-708a2f7fa4b4"
