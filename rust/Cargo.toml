@@ -6,3 +6,9 @@ authors = ["Dr. Christian Geuer-Pollmann <geuerp@apache.org>"]
 
 [dependencies]
 clap = { version = "4.0.29", features = ["derive"] }
+
+# https://github.com/johnthagen/min-sized-rust
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
