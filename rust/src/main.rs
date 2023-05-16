@@ -9,7 +9,7 @@ fn main() {
     );
 }
 
-#[derive(Parser, Debug)]
+#[derive(Parser, Default, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
     /// Number of partitions
