@@ -10,7 +10,7 @@ jobs:
     - uses: actions-rs/cargo@v1
       with:
         command: build
-        args: --release --verbose --manifest-path rust/Cargo.toml
+        args: --release --verbose --target x86_64-unknown-linux-musl --manifest-path rust/Cargo.toml
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "rust/target/release/partition_id"
