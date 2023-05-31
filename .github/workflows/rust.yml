@@ -13,5 +13,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions-rs/cargo@v1
-        with:
-          command: build --release --verbose
+      with:
+        command: build --release --verbose
