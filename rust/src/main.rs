@@ -1,4 +1,6 @@
 use clap::Parser;
+use clap_stdin::MaybeStdin;
+
 
 fn main() {
     let args = Args::parse();
@@ -9,16 +11,22 @@ fn main() {
     );
 }
 
-#[derive(Parser, Default, Debug)]
+#[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
+    // Can only be with short/long command line switches, or with positional arguments, but not both 🤨
+    // #[clap(short = 'c', long)]
+    // #[clap(index = 1)]
+
     /// Number of partitions
-    #[arg(short = 'c', long)]
+    #[clap(short = 'c', long)]
+    //#[clap(index = 1)]
     partition_count: i16,
 
     /// Partition Key
-    #[arg(short = 'k', long)]
-    partition_key: String,
+    #[clap(short = 'k', long)]
+    //#[clap(index = 2)]
+    partition_key: MaybeStdin<String>, // https://crates.io/crates/clap-stdin
 }
 
 use std::num::Wrapping;
