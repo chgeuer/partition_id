@@ -1,6 +1,12 @@
 name: Rust
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag for release (e.g. v1.0.0)'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -25,3 +31,4 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "rust/target/x86_64-unknown-linux-musl/release/partition_id"
+        tag: ${{ inputs.tag }}
